@@ -28,11 +28,54 @@
                                 <td><input type="button" class="btn btn-primary btn-font" value="MS"/></td>
                             </tr> 
                             <tr>
-                                <td colspan="2"><input type="button" class="btn btn-primary btn-fun" value="◢ Trigonometry"/></td>
-                                <td colspan="2"><input type="button" class="btn btn-primary btn-fun" value="ƒ Function"/></td>
+                                <td colspan="2">
+                                    <div class="dropdown">
+                                        <a class="btn btn-secondary dropdown-toggle btn-fun" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            ◢ Trigonometry
+                                        </a>  
+                                        <div class="dropdown-menu">
+                                            <table class="cal-table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td><input type="button" class="btn btn-primary" value="sin"/></td>
+                                                        <td><input type="button" class="btn btn-primary" value="cos" id="clear"/></td>
+                                                        <td><input type="button" class="btn btn-primary" value="tan" onclick="backSpace()"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="button" class="btn btn-primary" value="sec"/></td>
+                                                        <td><input type="button" class="btn btn-primary" value="csc" id="clear"/></td>
+                                                        <td><input type="button" class="btn btn-primary" value="cot" onclick="backSpace()"/></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                      </div>
+                                </td>
+                                <td colspan="2">
+                                    <div class="dropdown">
+                                        <a class="btn btn-secondary dropdown-toggle btn-fun" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            ƒ Function
+                                        </a>  
+                                        <div class="dropdown-menu">
+                                            <table class="cal-table">
+
+                                                <tr>
+                                                    <td><input type="button" class="btn btn-primary" value="rand"/></td>
+                                                    <td><input type="button" class="btn btn-primary" value="->dms"/></td>
+                                                    <td><input type="button" class="btn btn-primary" value="->deg" onclick="backSpace()"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="button" class="btn btn-primary" value="|x|"/></td>
+                                                    <td><input type="button" class="btn btn-primary" value="(x)"/></td>
+                                                    <td><input type="button" class="btn btn-primary" value="$" onclick="backSpace()"/></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                      </div>
+                                </td>
                             </tr> 
                             <tr>
-                                <td><input type="button" class="btn btn-primary" value="2nd"/></td>
+                                <td><button class="btn btn-primary" type="submit">2<sup>nd</sup></button></td>
                                 <td><input type="button" class="btn btn-primary" value="π"/></td>
                                 <td><input type="button" class="btn btn-primary" value="e"/></td>
                                 <td><input type="button" class="btn btn-primary" value="C" id="clear"/></td>
@@ -40,7 +83,7 @@
                             </tr>
                             <tr>
                                 <td><input type="button" class="btn btn-primary" value="x²"/></td>
-                                <td><input type="button" class="btn btn-primary" value="1/x"/></td>
+                                <td><button class="btn btn-primary" type="submit"><sup>1</sup>/<sub>x</sub></button></td>
                                 <td><input type="button" class="btn btn-primary" value="|x|"/></td>
                                 <td><input type="button" class="btn btn-primary" value="exp"/></td>
                                 <td><input type="button" class="btn btn-primary" value="mod"/></td>
@@ -53,14 +96,14 @@
                                 <td><input type="button" class="btn btn-primary" value="÷" onclick="devide()"/></td>
                             </tr>
                             <tr>
-                                <td><input type="button" class="btn btn-primary" value="x^y"/></td>
+                                <td><button class="btn btn-primary" type="submit">x<sup>y</sup></button></td>
                                 <td><input type="button" class="btn btn-primary cal-num" value="7" onclick="seven()"/></td>
                                 <td><input type="button" class="btn btn-primary cal-num" value="8" onclick="eight()"/></td>
                                 <td><input type="button" class="btn btn-primary cal-num" value="9" onclick="nine()"/></td>
                                 <td><input type="button" class="btn btn-primary" value="*" onclick="mutiply()"/></td>
                             </tr>
                             <tr>
-                                <td><input type="button" class="btn btn-primary" value="10^x"/></td>
+                                <td><button class="btn btn-primary" type="submit">10<sup>x</sup></button></td>
                                 <td><input type="button" class="btn btn-primary cal-num" value="4" onclick="four()"/></td>
                                 <td><input type="button" class="btn btn-primary cal-num" value="5" onclick="five()"/></td>
                                 <td><input type="button" class="btn btn-primary cal-num" value="6" onclick="six()"/></td>
@@ -75,7 +118,7 @@
                             </tr>
                             <tr>
                                 <td><input type="button" class="btn btn-primary" value="In"/></td>
-                                <td><input type="button" class="btn btn-primary cal-num" value="+/-"/></td>
+                                <td><button class="btn btn-primary cal-num" type="submit"><sup>+</sup>/<sub>-</sub></button></td>
                                 <td><input type="button" class="btn btn-primary cal-num" value="0" onclick="zero()"/></td>
                                 <td><input type="button" class="btn btn-primary cal-num" value="." onclick="point()"/></td>
                                 <td><input type="button" class="btn btn-primary btn-eql" value="=" onclick="equal()"/><br></td>

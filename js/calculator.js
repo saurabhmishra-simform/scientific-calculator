@@ -153,3 +153,4 @@ const equal = () =>{
         document.querySelector("#display").value = eval(calsi.display.value);
     }
 }
+
