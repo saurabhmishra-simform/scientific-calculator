@@ -1,156 +1,76 @@
+var screenValue = document.calsi.display;
 //clear
 document.querySelector("#clear").addEventListener("click", ()=>{
-    document.querySelector("#display").value = " "; 
+    screenValue.value = " "; 
 })
 
 //backSpace function
 const backSpace = ()=>{
-    const num = document.querySelector("#display").value.slice(0, -1);
-    document.querySelector("#display").value = num;
+    const num = screenValue.value.slice(0, -1);
+    screenValue.value = num;
 }
-
-//one function
-const one = () =>{
-    if(document.querySelector("#display"). value == " "){
-        document.querySelector("#display").value = "1";
-    }
-    else{
-        document.querySelector("#display").value = document.querySelector("#display").value + "1";
-    }
-}
-//two function
-const two = () =>{
-    if(document.querySelector("#display"). value == " "){
-        document.querySelector("#display").value = "2";
-    }
-    else{
-        document.querySelector("#display").value = document.querySelector("#display").value + "2";
-    }
-}
-//three function
-const three = () =>{
-    if(document.querySelector("#display"). value == " "){
-        document.querySelector("#display").value = "3";
-    }
-    else{
-        document.querySelector("#display").value = document.querySelector("#display").value + "3";
-    }
-}
-//four function
-const four = () =>{
-    if(document.querySelector("#display"). value == " "){
-        document.querySelector("#display").value = "4";
-    }
-    else{
-        document.querySelector("#display").value = document.querySelector("#display").value + "4";
-    }
-}
-//five function
-const five = () =>{
-    if(document.querySelector("#display"). value == " "){
-        document.querySelector("#display").value = "5";
-    }
-    else{
-        document.querySelector("#display").value = document.querySelector("#display").value + "5";
-    }
-}
-//six function
-const six = () =>{
-    if(document.querySelector("#display"). value == " "){
-        document.querySelector("#display").value = "6";
-    }
-    else{
-        document.querySelector("#display").value = document.querySelector("#display").value + "6";
+//display numbers & operator
+function displayNum(num)
+{
+    switch(num){
+        case 'zero':
+            screenValue.value += 0;
+            break;
+        case 'one':
+            screenValue.value += 1;
+            break;
+        case 'two':
+            screenValue.value += 2;
+            break;
+        case 'three':
+            screenValue.value += 3;
+            break;
+        case 'four':
+            screenValue.value += 4;
+            break;
+        case 'five':
+            screenValue.value += 5;
+            break;
+        case 'six':
+            screenValue.value += 6;
+            break;
+        case 'seven':
+            screenValue.value += 7;
+            break;
+        case 'eight':
+            screenValue.value += 8;
+            break;
+        case 'nine':
+            screenValue.value += 9;
+            break;
+        case 'point':
+            screenValue.value += '.';
+            break;
+        case 'devide':
+            screenValue.value += '/';
+            break; 
+        case 'multiply':
+            screenValue.value += '*';
+            break; 
+        case 'add':
+            screenValue.value += '+';
+            break; 
+        case 'subtract':
+            screenValue.value += '-';
+            break;            
     }
 }
-//seven function
-const seven = () =>{
-    if(document.querySelector("#display"). value == " "){
-        document.querySelector("#display").value = "7";
-    }
-    else{
-        document.querySelector("#display").value = document.querySelector("#display").value + "7";
-    }
-}
-//eight function
-const eight = () =>{
-    if(document.querySelector("#display"). value == " "){
-        document.querySelector("#display").value = "8";
-    }
-    else{
-        document.querySelector("#display").value = document.querySelector("#display").value + "8";
-    }
-}
-//nine function
-const nine = () =>{
-    if(document.querySelector("#display"). value == " "){
-        document.querySelector("#display").value = "9";
-    }
-    else{
-        document.querySelector("#display").value = document.querySelector("#display").value + "9";
-    }
-}
-//zero function
-const zero = () =>{
-    if(document.querySelector("#display"). value == " "){
-        document.querySelector("#display").value = "0";
-    }
-    else{
-        document.querySelector("#display").value = document.querySelector("#display").value + "0";
-    }
-}
-//point function
-const point = () =>{
-    if(document.querySelector("#display"). value == " "){
-        document.querySelector("#display").value = ".";
-    }
-    else{
-        document.querySelector("#display").value = document.querySelector("#display").value + ".";
-    }
-}
-//divide function
-const devide = () =>{
-    if(document.querySelector("#display"). value == " "){
-        document.querySelector("#display").value = "/";
-    }
-    else{
-        document.querySelector("#display").value = document.querySelector("#display").value + "/";
-    }
-}
-//mutiply function
-const mutiply = () =>{
-    if(document.querySelector("#display"). value == " "){
-        document.querySelector("#display").value = "*";
-    }
-    else{
-        document.querySelector("#display").value = document.querySelector("#display").value + "*";
-    }
-}
-//subtract function
-const subtract = () =>{
-    if(document.querySelector("#display"). value == " "){
-        document.querySelector("#display").value = "-";
-    }
-    else{
-        document.querySelector("#display").value = document.querySelector("#display").value + "-";
-    }
-}
-//add function
-const add = () =>{
-    if(document.querySelector("#display"). value == " "){
-        document.querySelector("#display").value = "+";
-    }
-    else{
-        document.querySelector("#display").value = document.querySelector("#display").value + "+";
-    }
+//Arithmetic operation
+function operation(){
+    
 }
 //equal function
 const equal = () =>{
-    if(document.querySelector("#display"). value == " "){
-        document.querySelector("#display").value = eval(calsi.display.value);
+    if(screenValue.value == " "){
+        screenValue.value = eval(calsi.display.value);
     }
     else{
-        document.querySelector("#display").value = eval(calsi.display.value);
+        screenValue.value = eval(calsi.display.value);
     }
 }
 

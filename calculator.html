@@ -38,12 +38,12 @@
                                                 <tbody>
                                                     <tr>
                                                         <td><input type="button" class="btn btn-primary" value="sin"/></td>
-                                                        <td><input type="button" class="btn btn-primary" value="cos" id="clear"/></td>
+                                                        <td><input type="button" class="btn btn-primary" value="cos"/></td>
                                                         <td><input type="button" class="btn btn-primary" value="tan" onclick="backSpace()"/></td>
                                                     </tr>
                                                     <tr>
                                                         <td><input type="button" class="btn btn-primary" value="sec"/></td>
-                                                        <td><input type="button" class="btn btn-primary" value="csc" id="clear"/></td>
+                                                        <td><input type="button" class="btn btn-primary" value="csc"/></td>
                                                         <td><input type="button" class="btn btn-primary" value="cot" onclick="backSpace()"/></td>
                                                     </tr>
                                                 </tbody>
@@ -93,34 +93,34 @@
                                 <td><input type="button" class="btn btn-primary" value="("/></td>
                                 <td><input type="button" class="btn btn-primary" value=")"/></td>
                                 <td><input type="button" class="btn btn-primary" value="n!"/></td>
-                                <td><input type="button" class="btn btn-primary" value="÷" onclick="devide()"/></td>
+                                <td><input type="button" class="btn btn-primary" value="÷" onclick="displayNum(this.id)" id="devide"/></td>
                             </tr>
                             <tr>
                                 <td><button class="btn btn-primary" type="submit">x<sup>y</sup></button></td>
-                                <td><input type="button" class="btn btn-primary cal-num" value="7" onclick="seven()"/></td>
-                                <td><input type="button" class="btn btn-primary cal-num" value="8" onclick="eight()"/></td>
-                                <td><input type="button" class="btn btn-primary cal-num" value="9" onclick="nine()"/></td>
-                                <td><input type="button" class="btn btn-primary" value="*" onclick="mutiply()"/></td>
+                                <td><input type="button" class="btn btn-primary cal-num" value="7" onclick="displayNum(this.id)" id="seven"/></td>
+                                <td><input type="button" class="btn btn-primary cal-num" value="8" onclick="displayNum(this.id)" id="eight"/></td>
+                                <td><input type="button" class="btn btn-primary cal-num" value="9" onclick="displayNum(this.id)" id="nine"/></td>
+                                <td><input type="button" class="btn btn-primary" value="*" onclick="displayNum(this.id)" id="multiply"/></td>
                             </tr>
                             <tr>
                                 <td><button class="btn btn-primary" type="submit">10<sup>x</sup></button></td>
-                                <td><input type="button" class="btn btn-primary cal-num" value="4" onclick="four()"/></td>
-                                <td><input type="button" class="btn btn-primary cal-num" value="5" onclick="five()"/></td>
-                                <td><input type="button" class="btn btn-primary cal-num" value="6" onclick="six()"/></td>
-                                <td><input type="button" class="btn btn-primary" value="-" onclick="subtract()"/></td>
+                                <td><input type="button" class="btn btn-primary cal-num" value="4" onclick="displayNum(this.id)" id="four"/></td>
+                                <td><input type="button" class="btn btn-primary cal-num" value="5" onclick="displayNum(this.id)" id="five"/></td>
+                                <td><input type="button" class="btn btn-primary cal-num" value="6" onclick="displayNum(this.id)" id="six"/></td>
+                                <td><input type="button" class="btn btn-primary" value="-" onclick="displayNum(this.id)" id="subtract"/></td>
                             </tr>
                             <tr>
                                 <td><input type="button" class="btn btn-primary" value="log"/></td>
-                                <td><input type="button" class="btn btn-primary cal-num" value="1" onclick="one()"/></td>
-                                <td><input type="button" class="btn btn-primary cal-num" value="2" onclick="two()"/></td>
-                                <td><input type="button" class="btn btn-primary cal-num" value="3" onclick="three()"/></td>
-                                <td><input type="button" class="btn btn-primary" value="+" onclick="add()"/></td>
+                                <td><input type="button" class="btn btn-primary cal-num" value="1" onclick="displayNum(this.id)" id="one"/></td>
+                                <td><input type="button" class="btn btn-primary cal-num" value="2" onclick="displayNum(this.id)" id="two"/></td>
+                                <td><input type="button" class="btn btn-primary cal-num" value="3" onclick="displayNum(this.id)" id="three"/></td>
+                                <td><input type="button" class="btn btn-primary" value="+" onclick="displayNum(this.id)" id="add"/></td>
                             </tr>
                             <tr>
                                 <td><input type="button" class="btn btn-primary" value="In"/></td>
                                 <td><button class="btn btn-primary cal-num" type="submit"><sup>+</sup>/<sub>-</sub></button></td>
-                                <td><input type="button" class="btn btn-primary cal-num" value="0" onclick="zero()"/></td>
-                                <td><input type="button" class="btn btn-primary cal-num" value="." onclick="point()"/></td>
+                                <td><input type="button" class="btn btn-primary cal-num" value="0" onclick="displayNum(this.id)" id="zero"/></td>
+                                <td><input type="button" class="btn btn-primary cal-num" value="." onclick="displayNum(this.id)" id="point"/></td>
                                 <td><input type="button" class="btn btn-primary btn-eql" value="=" onclick="equal()"/><br></td>
                             </tr>
                         </tbody>
