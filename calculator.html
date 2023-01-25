@@ -78,8 +78,8 @@
                                 <td><button class="btn btn-primary" type="submit">2<sup>nd</sup></button></td>
                                 <td><input type="button" class="btn btn-primary" value="π"/></td>
                                 <td><input type="button" class="btn btn-primary" value="e"/></td>
-                                <td><input type="button" class="btn btn-primary" value="C" id="clear"/></td>
-                                <td><input type="button" class="btn btn-primary" value="⌫" onclick="backSpace()"/></td>
+                                <td><input type="button" class="btn btn-primary" value="C" onclick="operation(this.id)" id="clear"/></td>
+                                <td><input type="button" class="btn btn-primary" value="⌫" onclick="operation(this.id)" id="backSpace"/></td>
                             </tr>
                             <tr>
                                 <td><input type="button" class="btn btn-primary" value="x²"/></td>
@@ -121,7 +121,7 @@
                                 <td><button class="btn btn-primary cal-num" type="submit"><sup>+</sup>/<sub>-</sub></button></td>
                                 <td><input type="button" class="btn btn-primary cal-num" value="0" onclick="displayNum(this.id)" id="zero"/></td>
                                 <td><input type="button" class="btn btn-primary cal-num" value="." onclick="displayNum(this.id)" id="point"/></td>
-                                <td><input type="button" class="btn btn-primary btn-eql" value="=" onclick="equal()"/><br></td>
+                                <td><input type="button" class="btn btn-primary btn-eql" value="=" onclick="operation(this.id)" id="equal"/><br></td>
                             </tr>
                         </tbody>
                     </table>       

@@ -1,14 +1,4 @@
 var screenValue = document.calsi.display;
-//clear
-document.querySelector("#clear").addEventListener("click", ()=>{
-    screenValue.value = " "; 
-})
-
-//backSpace function
-const backSpace = ()=>{
-    const num = screenValue.value.slice(0, -1);
-    screenValue.value = num;
-}
 //display numbers & operator
 function displayNum(num)
 {
@@ -61,16 +51,26 @@ function displayNum(num)
     }
 }
 //Arithmetic operation
-function operation(){
-    
-}
-//equal function
-const equal = () =>{
-    if(screenValue.value == " "){
-        screenValue.value = eval(calsi.display.value);
+function operation(oper){
+    switch(oper){
+        case 'backSpace': //backspace
+            const num = screenValue.value.slice(0, -1);
+            screenValue.value = num;
+            break;
+        case 'clear': //clear
+            document.querySelector("#clear").addEventListener("click", ()=>{
+                screenValue.value = " "; 
+            })
+            break;
+        case 'equal': //equal
+            if(screenValue.value == " "){
+                screenValue.value = eval(calsi.display.value);
+            }
+            else{
+                screenValue.value = eval(calsi.display.value);
+            }
+            break;
     }
-    else{
-        screenValue.value = eval(calsi.display.value);
-    }
 }
+
 
