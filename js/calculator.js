@@ -152,29 +152,30 @@ function xPowY(){
 //Trigonometry function
 function trigonometry(num){
     let n;
+    var mathPI = Math.PI /180 ;
     switch(num){
         case 'sin':
-            n = Math.sin(screenValue.value * Math.PI /180)
+            n = Math.sin(screenValue.value *  mathPI)
             screenValue.value = n;
             break;
         case 'cos':
-            n = Math.cos(screenValue.value * Math.PI /180)
+            n = Math.cos(screenValue.value *  mathPI)
             screenValue.value = n;
             break;
         case 'tan':
-            n = Math.tan(screenValue.value * Math.PI /180)
+            n = Math.tan(screenValue.value *  mathPI)
             screenValue.value = n;
             break;
         case 'sinh':
-            n = Math.sinh(screenValue.value * Math.PI /180)
+            n = Math.sinh(screenValue.value *  mathPI)
             screenValue.value = n;
             break;
         case 'cosh':
-            n = Math.cosh(screenValue.value * Math.PI /180)
+            n = Math.cosh(screenValue.value *  mathPI)
             screenValue.value = n;
             break;
         case 'tanh':
-            n = Math.tanh(screenValue.value * Math.PI /180)
+            n = Math.tanh(screenValue.value *  mathPI)
             screenValue.value = n;
             break;
     }
@@ -231,13 +232,14 @@ function handleMSubtract(){
 function mrHandle(){
     let ans=Number.parseInt(memoryArray[0]);
     for(let i = 1; i < memoryArray.length; i++){
+        let arrayValue = Number.parseInt(memoryArray[i]);
         if(sign=="Plus")
         {
-            ans = ans + Number.parseInt(memoryArray[i]);
+            ans = ans + arrayValue;
         }
         if(sign=="Minus")
         {
-            ans = ans - Number.parseInt(memoryArray[i]);
+            ans = ans - arrayValue;
         }
     }
     screenValue.value = ans;
