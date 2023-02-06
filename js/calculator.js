@@ -65,7 +65,7 @@ function displayNum(num) {
     }
     equalCounter = 0;
     signcounter = 1;
-    plusmincount += 1;
+    plusmincount = 1;
 }
 function pointOperation() {
     if (screenValue.value == "") {
@@ -167,6 +167,7 @@ function operation(oper) {
                 screenValue.value = "";
             })
             bodmasCounter = 0;
+            plusmincount = 1;
             break;
         case 'equal': //equal
             if (screenValue.value == "") {
@@ -235,16 +236,17 @@ function operation(oper) {
 }
 function plusMin(id) {
     if (id == 'plus-min' && screenValue.value != '0') {
-        if (plusmincount == 1) {
-            screenValue.value = "-" + screenValue.value;
-            signcounter = 1;
-        }
-        else {
+        if(screenValue.value.includes(simpleSign))
+        {
             let a = screenValue.value[screenValue.value.length - 1];
             if (a.match(/[0-9]/)) {
                 let b = screenValue.value.split(simpleSign);
                 screenValue.value = b[0] + simpleSign + "(-" + b[1] + ")";
             }
+        }
+        else{
+            screenValue.value = "-" + screenValue.value;
+            signcounter = 1;
         }
     }
     else {
