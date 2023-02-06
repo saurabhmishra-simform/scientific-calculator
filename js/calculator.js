@@ -110,7 +110,6 @@ function bodmas(id) {
             bodmasCounter = 0;
             break;
         case 'closebracket':
-            console.log(bracatcounter);
             if (bracatcounter != 0) {
                 if (lcount == 0) {
                     screenValue.value += '0)';
