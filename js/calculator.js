@@ -168,6 +168,7 @@ function operation(oper) {
             })
             bodmasCounter = 0;
             plusmincount = 1;
+            signcounter = 0;
             break;
         case 'equal': //equal
             if (screenValue.value == "") {
@@ -176,8 +177,11 @@ function operation(oper) {
             else if (screenValue.value.includes("^")) {
                 xPowY();
             }
-            else if (chackScreen == '+' ||chackScreen == '-' ||chackScreen == '*' ||chackScreen == '/') {
+            else if (chackScreen == '+' || chackScreen == '-' || chackScreen == '*' || chackScreen == '/') {
                 screenValue.value = "invalid input!"
+            }
+            else if (screenValue.value.includes("/0")) {
+                screenValue.value = "Cannot divide by zero";
             }
             else {
                 screenValue.value = eval(calsi.display.value);
@@ -216,56 +220,66 @@ function operation(oper) {
             screenValue.value = Math.pow(screenValue.value, 2);
             break;
         case 'oneByX': //find 1/x
-            screenValue.value = 1 / screenValue.value;
+            if (screenValue.value == "") {
+                screenValue.value = "Cannot divide by zero";
+            }
+            else {
+                screenValue.value = (signcounter == 1) ? 1 / screenValue.value : "Cannot divide by zero";
+            }
             break;
         case 'abs': //find |x|
             screenValue.value = Math.abs(screenValue.value);
             break;
         case 'exp': //find exp
-            screenValue.value = screenValue.value + ".e+0";
-            break;
-        case 'FE': //find F-E
-            if (screenValue.value == " ") {
+            if (screenValue.value == "") {
                 screenValue.value = '0.e+0';
             }
             else {
-                screenValue.value = screenValue.value + ".e+0";
+                if (signcounter == 1) {
+                    screenValue.value = screenValue.value.includes(".e+0") ? screenValue.value : screenValue.value + ".e+0";
+                }
+                else {
+                    screenValue.value = '0.e+0';
+                }
+            }
+            break;
+        case 'FE': //find F-E
+            if (screenValue.value == "") {
+                screenValue.value = '0.e+0';
+                signcounter = 1;
+            }
+            else {
+                screenValue.value = "";
             }
             break;
     }
 }
 function plusMin(id) {
     if (id == 'plus-min' && screenValue.value != '0') {
-        if(screenValue.value.includes(simpleSign))
-        {
+        if (screenValue.value.includes(simpleSign)) {
             let a = screenValue.value[screenValue.value.length - 1];
             if (a.match(/[0-9]/)) {
                 let b = screenValue.value.split(simpleSign);
                 screenValue.value = b[0] + simpleSign + "(-" + b[1] + ")";
             }
         }
-        else{
-            screenValue.value = "-" + screenValue.value;
-            signcounter = 1;
+        else {
+            if (signcounter == 1) {
+                screenValue.value = "-" + screenValue.value;
+            }
+            signcounter = 0;
         }
     }
     else {
-        if (id == 'plus-min') {
-            signcounter = 1;
-        }
-        else {
-            signcounter = 0;
-        }
+        signcounter = (id == 'plus-min') ? 1 : 0;
     }
 }
 //factorial find
 function factorial() {
-    if(screenValue.value < 0)
-    {
+    if (screenValue.value < 0) {
         screenValue.value = "invlid input!"
     }
-    else
-    {
+    else {
         let fact = 1;
         for (let i = 1; i <= screenValue.value; i++) {
             fact *= i;
@@ -331,13 +345,30 @@ function fun(num) {
             break;
     }
 }
+function enableMemory(str) {
+    let memoryClear = document.getElementById('mc');
+    let memoryR = document.getElementById('mr');
+    if(str == 'mAdd' || str == 'mSubtract' || str == 'ms'){
+        memoryClear.disabled = false;
+        memoryR.disabled = false;
+    }
+    else
+    {
+        memoryClear.disabled = true;
+        memoryR.disabled = true;
+    }
+    
+}
 //memory function
 function memoryOperation(str) {
     switch (str) {
         case 'mc':
-            screenValue.value = localStorage.clear();
+            localStorage.clear();
+            screenValue.value = "";
+            enableMemory(str);
             break;
         case 'mAdd':
+            enableMemory(str);
             handleMemory('Plus');
             break;
         case 'mSubtract':
@@ -347,6 +378,7 @@ function memoryOperation(str) {
             mrHandle();
             break;
         case 'ms':
+            enableMemory(str);
             localStorage.setItem("memoryValue", JSON.stringify(memoryArray));
             break;
     }
@@ -382,11 +414,11 @@ function mrHandle() {
     screenValue.value = ans;
 }
 //Tow Power nd function
-function twoPowerND() { 
-    document.getElementById("square").value = (btnVal %2 ==0) ? "x'" : "x²";
-    document.getElementById("squareRoot").value = (btnVal %2 ==0) ? "&" : "2√x";
-    document.getElementById("openbracket").value = (btnVal %2 ==0) ? "⇒" : "(";
-    document.getElementById("closebracket").value = (btnVal %2 ==0) ? "∑" : ")";
+function twoPowerND() {
+    document.getElementById("square").value = (btnVal % 2 == 0) ? "x'" : "x²";
+    document.getElementById("squareRoot").value = (btnVal % 2 == 0) ? "&" : "2√x";
+    document.getElementById("openbracket").value = (btnVal % 2 == 0) ? "⇒" : "(";
+    document.getElementById("closebracket").value = (btnVal % 2 == 0) ? "∑" : ")";
     btnVal++;
 }
 
